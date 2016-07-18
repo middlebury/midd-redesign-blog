@@ -34,8 +34,8 @@ var paths = {
     dest: './'
   },
   js: {
-    src: '',
-    dest: ''
+    src: './src/js/**/*.js',
+    dest: './js/'
   }
 }
 
@@ -72,7 +72,8 @@ gulp.task('scripts', function() {
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
     .pipe(gulpif(PRODUCTION, uglify()))
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-    .pipe(gulp.dest(paths.js.dest));
+    .pipe(gulp.dest(paths.js.dest))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('browser-sync', function() {
@@ -94,4 +95,4 @@ gulp.task('watch', function() {
   gulp.watch(paths.js.src, ['scripts']);
 });
 
-gulp.task('default', ['sass', 'watch', 'browser-sync']);
+gulp.task('default', ['scripts', 'sass', 'watch', 'browser-sync']);
