@@ -1,0 +1,22 @@
+/*!
+  Theme Name: Middlebury Website Redesign Blog
+  Theme URI: http://github.com/middlebury/middlebury-website-redesign-blog
+  Template: genesis
+  Description: Theme for the announcements blog regarding the Middlebury redesign
+  Author: Zebhdiyah Pykosz
+  Author URI: http://zeb.codes
+  Version: 0.1.0
+  GitHub Theme URI: middlebury/wordpress
+*/
+
+// vendor
+@import '../../node_modules/normalize.css/normalize';
+
+// core
+@import 'functions';
+@import 'variables';
+@import 'placeholders';
+@import 'mixins';
+
+// global
+@import 'global';
