@@ -11,6 +11,7 @@ var uglify = require('gulp-uglify');
 var gulpif = require('gulp-if');
 var args = require('yargs').argv;
 var del = require('del');
+var sassGlob = require('gulp-sass-glob');
 
 var PRODUCTION = !!args.production;
 
@@ -57,6 +58,7 @@ gulp.task('images', function() {
 gulp.task('sass', function() {
   return gulp.src(paths.sass.src)
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
+    .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
     .pipe(cmq())
     .pipe(cssnano())
