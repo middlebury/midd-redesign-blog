@@ -60,6 +60,7 @@ gulp.task('sass', function() {
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(cmq())
     .pipe(cssnano())
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
