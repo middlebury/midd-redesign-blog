@@ -1,0 +1,23 @@
+.content-sidebar-wrap {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.content {
+  .sidebar-content & {
+    @include media(lg) {
+      order: 2;
+      flex: 2;
+      padding-left: 60px;
+    }
+  }
+}
+
+.sidebar {
+  .sidebar-content & {
+    @include media(lg) {
+      order: 1;
+      width: 200px;
+    }
+  }
+}

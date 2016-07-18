@@ -24,12 +24,34 @@
 // components
 @import 'header';
 @import 'nav';
+@import 'widget';
+@import 'post';
+@import 'content';
+@import 'footer';
 
 .wrap {
   padding-left: 20px;
   padding-right: 20px;
-}
+  margin-left: auto;
+  margin-right: auto;
 
+  @include media(md) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @include media(md) {
+    max-width: 600px;
+  }
+
+  @include media(lg) {
+    max-width: 924px;
+  }
+
+  @include media(xl) {
+    max-width: 1080px;
+  }
+}
 
 ul,
 ol {

@@ -1,0 +1,26 @@
+.widget {
+
+}
+
+.widget-title {
+  font-size: 18px;
+  color: $brand-primary;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+.tagcloud {
+  > a {
+    display: block;
+    background-color: $brand-secondary;
+    font-size: 13px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: $gray;
+    padding: 10px;
+    
+    &:not(:last-child) {
+      border-bottom: 1px solid $brand-primary;
+    }
+  }
+}

@@ -1,12 +1,11 @@
 .nav-primary {
+  border-top: 3px solid $brand-primary;
+  background-color: $brand-secondary;
+  padding: 20px;
+  border-bottom: 1px solid $brand-primary;
 
-  .wrap {
-    > ul {
-      border-top: 3px solid $brand-primary;
-      background-color: $brand-secondary;
-      padding: 20px;
-      border-bottom: 1px solid $brand-primary;
-    }
+  > ul {
+    margin-bottom: 0;
   }
 
   .menu-item {
@@ -14,9 +13,11 @@
     padding-bottom: 10px;
 
     > a {
+      display: block;
       color: $gray;
       text-transform: uppercase;
       letter-spacing: 0.2em;
+      font-size: 14px;
     }
   }
 
