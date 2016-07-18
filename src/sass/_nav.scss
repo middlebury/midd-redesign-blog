@@ -1,0 +1,35 @@
+.nav-primary {
+
+  .wrap {
+    > ul {
+      border-top: 3px solid $brand-primary;
+      background-color: $brand-secondary;
+      padding: 20px;
+      border-bottom: 1px solid $brand-primary;
+    }
+  }
+
+  .menu-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    > a {
+      color: $gray;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+  }
+
+  .sub-menu {
+    margin-top: 10px;
+
+    .menu-item {
+      padding-left: 10px;
+      border-top: 1px solid $brand-primary;
+
+      &:last-child {
+        border-bottom: 1px solid $brand-primary;
+      }
+    }
+  }
+}

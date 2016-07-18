@@ -3,7 +3,7 @@
 include_once( get_template_directory() . '/lib/init.php' );
 
 //* Child theme (do not remove)
-define( 'CHILD_THEME_NAME', __( 'Genesis Boilerplate', 'geneplate' ) );
+define( 'CHILD_THEME_NAME', __( 'Middlebury Website Redesign', 'midd-redesign' ) );
 define( 'CHILD_THEME_URL', 'http://github.com/middlebury/genesis-child-theme-boilerplate/' );
 define( 'CHILD_THEME_VERSION', '0.1.0' );
 
@@ -26,3 +26,11 @@ add_theme_support( 'genesis-structural-wraps', array(
     'footer-widgets',
     'footer'
 ) );
+
+add_action('wp_enqueue_scripts', 'rdsn_enqueue');
+function rdsn_enqueue() {
+  wp_enqueue_style( 'cci-fonts', 'https://cloud.typography.com/83898/706148/css/fonts.css', array(), CHILD_THEME_VERSION );
+}
+
+//* Remove the site description
+remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
