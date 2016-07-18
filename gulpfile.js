@@ -80,6 +80,7 @@ gulp.task('scripts', function() {
 gulp.task('browser-sync', function() {
   browserSync.init({
     open: false,
+    notify: false,
     files: [
       './*.php',
       paths.sass.src
