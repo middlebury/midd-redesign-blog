@@ -1,0 +1,66 @@
+%meta-spacecase {
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.post {
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $brand-primary;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
+.entry-header {
+  margin-bottom: 40px;
+}
+
+.entry-time {
+  @extend %meta-spacecase;
+}
+
+.entry-categories,
+.entry-tags {
+  font-size: 13px;
+
+  strong {
+    @extend %meta-spacecase;
+  }
+}
+
+.entry-title {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 10px;
+  margin-top: 0;
+
+  .page & {
+    font-weight: 600;
+  }
+}
+
+.entry-author-by {
+  font-family: georgia, serif;
+  font-style: italic;
+  font-size: 12px;
+  color: $gray;
+}
+
+.entry-author-name {
+  font-size: 14px;
+  letter-spacing: .1em;
+  font-weight: 500;
+  color: $gray;
+}
+
+.entry-footer {
+  margin-top: 40px;
+}
