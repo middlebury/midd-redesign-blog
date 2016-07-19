@@ -7,7 +7,7 @@
 }
 
 body {
-  color: $body-font-color;
+  color: $black;
   font-family: $body-font-family;
   font-size: 1em;
   line-height: 1.4;
@@ -15,11 +15,11 @@ body {
 }
 
 a {
-  color: $link-color;
+  color: $brand-primary;
   text-decoration: none;
 
   &:hover {
-    color: $link-color-hover;
+    color: $brand-primary;
     text-decoration: none;
   }
 }
