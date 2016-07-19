@@ -1,5 +1,4 @@
 .nav-primary {
-  border-top: 3px solid $brand-primary;
   background-color: $brand-secondary;
   padding: 20px;
   border-bottom: 1px solid $brand-primary;
@@ -32,5 +31,18 @@
         border-bottom: 1px solid $brand-primary;
       }
     }
+  }
+}
+
+// handle responsive menu toggling
+.nav-primary {
+  display: none;
+
+  @include media(lg) {
+    display: block;
+  }
+
+  .is-open & {
+    display: block;
   }
 }
