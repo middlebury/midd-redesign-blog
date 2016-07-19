@@ -1,5 +1,5 @@
 .content-sidebar-wrap {
-  margin-bottom: 100px;
+
   @include media(lg) {
     display: flex;
   }
@@ -7,6 +7,8 @@
 
 .content {
   .sidebar-content & {
+    margin-bottom: 100px;
+
     @include media(lg) {
       order: 2;
       flex: 2;
@@ -16,6 +18,8 @@
 }
 
 .sidebar {
+  margin-bottom: 100px;
+  
   .sidebar-content & {
     @include media(lg) {
       order: 1;
