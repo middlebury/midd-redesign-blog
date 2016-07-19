@@ -34,3 +34,74 @@ function rdsn_enqueue() {
 
 //* Remove the site description
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+
+//* Reposition the primary navigation menu
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'genesis_do_nav', 12 );
+
+//* Force sidebar-content layout
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_sidebar_content' );
+
+//* Remove content/sidebar layout
+genesis_unregister_layout( 'content-sidebar' );
+
+//* Remove sidebar/content layout
+// genesis_unregister_layout( 'sidebar-content' );
+
+//* Remove content/sidebar/sidebar layout
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+
+//* Remove sidebar/sidebar/content layout
+genesis_unregister_layout( 'sidebar-sidebar-content' );
+
+//* Remove sidebar/content/sidebar layout
+genesis_unregister_layout( 'sidebar-content-sidebar' );
+
+//* Remove full-width content layout
+genesis_unregister_layout( 'full-width-content' );
+
+//* Reorder post info
+remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+add_action( 'genesis_entry_header', 'genesis_post_info', 5 );
+
+//* Customize the post meta function
+add_filter( 'genesis_post_meta', 'sp_post_meta_filter' );
+function sp_post_meta_filter( $post_meta ) {
+  if ( !is_page() ) {
+  	$post_meta = '[post_tags before="<strong>Tags:</strong> "]';
+  	return $post_meta;
+  }
+}
+
+add_filter( 'genesis_post_info', 'sp_post_info_filter' );
+function sp_post_info_filter( $post_info ) {
+  if ( !is_page() ) {
+  	$post_info = '[post_date]<br>[post_categories before="<strong>Categories:</strong> "]';
+  	return $post_info;
+  }
+}
+
+add_filter( 'genesis_post_title_output', 'rdsn_post_title_output', 15 );
+function rdsn_post_title_output( $title ) {
+  if ( !is_page() ) {
+    $author_link = do_shortcode('[post_author_posts_link before="<span class=\'entry-author-by\'>by</span> "]');
+    return $title . $author_link;
+  }
+
+  return $title;
+}
+
+
+//* Customize previous link in pagination
+add_filter( 'genesis_prev_link_text', 'cci_prev_link_text' );
+function cci_prev_link_text() {
+  $prevlink = 'Previous';
+  return $prevlink;
+}
+
+//* Customize next link in pagination
+add_filter( 'genesis_next_link_text', 'cci_next_link_text' );
+function cci_next_link_text() {
+  $nextlink = 'Next';
+  return $nextlink;
+}
