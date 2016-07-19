@@ -17,10 +17,12 @@ body {
 a {
   color: $brand-primary;
   text-decoration: none;
+  transition: background-color 0.2s;
 
   &:hover {
     color: $brand-primary;
     text-decoration: none;
+    background-color: transparentize(#97BBD5, 0.5);
   }
 }
 
