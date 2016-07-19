@@ -20,9 +20,9 @@ add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 999 );
 //* Add support for structural wraps (max-width has been added to most content-entry elements to allow for full-width images on any page or post. If you don't need full-width images, you can add structural wrap in site-inner.)
 add_theme_support( 'genesis-structural-wraps', array(
     'header',
-    'nav',
+    // 'nav',
     // 'subnav',
-    // 'site-inner',
+    'site-inner',
     'footer-widgets',
     'footer'
 ) );
