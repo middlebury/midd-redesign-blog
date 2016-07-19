@@ -1,0 +1,25 @@
+.menu-btn-holder {
+  text-align: right;
+  flex: 1;
+  align-self: flex-end;
+}
+
+.menu-btn {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: $gray;
+  background: none;
+  border: 0;
+  font-weight: 600;
+  padding: 2px;
+  outline: 0;
+
+  &:after {
+    content: $unicode-triple-equals;
+    margin-left: 5px;
+
+    .is-open & {
+      content: $unicode-times;
+    }
+  }
+}

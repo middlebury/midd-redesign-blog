@@ -2,18 +2,9 @@
   margin-bottom: 80px;
 }
 
-.site-header > .wrap {
-  // display: flex;
-  // flex-direction: row wrap;
-}
-
-.nav-primary {
-  // flex: 0 0 100%;
-}
-
 .title-area {
-  // display: flex;
-  // flex: 0 0 50%;
+  display: flex;
+  border-bottom: 3px solid $brand-primary;
 }
 
 .site-title {
@@ -21,20 +12,5 @@
   font-weight: 600;
   line-height: 27px;
   margin-bottom: 5px;
-}
-
-.menu-btn-holder {
-  // flex: 0 0 50%;
-  text-align: right;
-  // align-self: flex-end;
-}
-
-.menu-btn {
-  text-transform: uppercase;
-  font-size: 14px;
-  color: $gray;
-  background: none;
-  border: 0;
-  font-weight: 600;
-  padding: 0;
+  width: 240px;
 }
