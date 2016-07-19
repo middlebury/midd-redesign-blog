@@ -17,13 +17,41 @@
   }
 }
 
+$widget-spacing: 20px;
+
 .sidebar {
   margin-bottom: 100px;
-  
+
   .sidebar-content & {
     @include media(lg) {
       order: 1;
       width: 200px;
+    }
+  }
+
+
+  @include media(md) {
+    display: flex;
+    margin-left: -#{$widget-spacing};
+    margin-right: -#{$widget-spacing};
+
+    .widget {
+      flex: 1;
+      align-content: space-between;
+      padding-left: $widget-spacing;
+      padding-right: $widget-spacing;
+    }
+  }
+
+  @include media(lg) {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+
+    .widget {
+      flex: none;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
