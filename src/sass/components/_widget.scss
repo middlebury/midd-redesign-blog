@@ -22,6 +22,11 @@
     padding: 10px;
     border-bottom: 1px solid $brand-primary;
 
+    &:hover {
+      color: $brand-primary;
+      background-color: $brand-secondary-dark;
+    }
+
     &:first-child {
       border-top: 1px solid $brand-primary;
     }
