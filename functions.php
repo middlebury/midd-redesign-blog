@@ -106,3 +106,8 @@ function cci_next_link_text() {
   $nextlink = 'Next';
   return $nextlink;
 }
+
+add_filter( 'genesis_site_title_wrap', 'rdsn_h1_for_site_title' );
+function rdsn_h1_for_site_title( $wrap ) {
+  return 'h1';
+}
