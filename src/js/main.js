@@ -1,21 +1,24 @@
-(function($) {
+(function() {
 
-  if(!window.matchMedia('(min-width: 769px)').matches) {
+  if(!window.matchMedia('(min-width: 1024px)').matches) {
 
-    var $header = $('.site-header');
-    var $nav = $('.nav-primary');
+    var header = document.querySelector('.site-header');
+    var nav = document.querySelector('.nav-primary');
 
-    var $navBtn = $('<button>');
-    $navBtn.text('Menu');
-    $navBtn.addClass('menu-btn');
+    var navBtn = document.createElement('button');
+    navBtn.appendChild(document.createTextNode('Menu'));
+    navBtn.classList.add('menu-btn');
 
-    var $btnHolder = $('<div class="menu-btn-holder">').append($navBtn);
-    $('.title-area').append($btnHolder);
+    var btnHolder = document.createElement('div').appendChild(navBtn);
 
-    $navBtn.on('click', function() {
-      $header.toggleClass('is-open');
+    btnHolder.classList.add('menu-btn-holder');
+
+    document.querySelector('.title-area').appendChild(btnHolder);
+
+    navBtn.addEventListener('click', function() {
+      header.classList.toggle('is-open');
     });
 
   }
 
-})(jQuery);
+})();

@@ -30,7 +30,7 @@ add_theme_support( 'genesis-structural-wraps', array(
 add_action('wp_enqueue_scripts', 'rdsn_enqueue_scripts_styles');
 function rdsn_enqueue_scripts_styles() {
   wp_enqueue_style( 'rdsn-fonts', 'https://cloud.typography.com/83898/706148/css/fonts.css', array(), CHILD_THEME_VERSION );
-  wp_enqueue_script( 'rdsn-main-script', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
+  wp_enqueue_script( 'rdsn-main-script', get_stylesheet_directory_uri() . '/js/main.js', array(), '1.0.0', true );
 }
 
 //* Remove the site description
