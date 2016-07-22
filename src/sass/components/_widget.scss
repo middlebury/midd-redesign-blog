@@ -16,11 +16,10 @@
     display: block;
     background-color: $brand-secondary;
     font-size: 13px !important;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
     color: $gray;
     padding: 10px;
     border-bottom: 1px solid $brand-primary;
+    @extend %spacecase;
 
     &:hover {
       color: $brand-primary;

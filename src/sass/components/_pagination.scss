@@ -9,10 +9,9 @@
 
   a {
     color: $gray;
-    text-transform: uppercase;
-    letter-spacing: 0.17em;
     font-size: 12px;
     @extend %bordered-link;
+    @extend %spacecase;
   }
 }
 

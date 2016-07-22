@@ -1,6 +1,5 @@
 %meta-spacecase {
-  text-transform: uppercase;
-  letter-spacing: 0.17em;
+  @extend %spacecase;
   font-size: 12px;
   font-weight: 500;
 }
