@@ -1,10 +1,22 @@
 .site-header {
   margin-bottom: 80px;
+
+  .wrap {
+    @include media(lg) {
+      border-bottom: 3px solid $brand-primary;
+      display: flex;
+    }
+  }
 }
 
 .title-area {
   display: flex;
   border-bottom: 3px solid $brand-primary;
+
+  @include media(lg) {
+    border-bottom: 0;
+    margin-right: 70px;
+  }
 }
 
 .site-title {
@@ -12,5 +24,5 @@
   font-weight: 600;
   line-height: 27px;
   margin-bottom: 5px;
-  width: 240px;
+  width: 215px;
 }

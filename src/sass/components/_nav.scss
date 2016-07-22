@@ -1,48 +1,125 @@
+.site-header .wrap {
+  @include clearfix();
+}
+
 .nav-primary {
   background-color: $brand-secondary;
   padding: 20px;
   border-bottom: 1px solid $brand-primary;
+  display: none;
 
-  > ul {
-    margin-bottom: 0;
+  .is-open & {
+    display: block;
   }
 
-  .menu-item {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  @include media(md) {
+    min-width: 280px;
+    float: right;
+  }
+
+  @include media(lg) {
+    background-color: transparent;
+    border-bottom: 0;
+    flex: 1;
+    padding: 0;
+    align-self: flex-end;
+    min-width: auto;
+    display: block;
+  }
+}
+
+.menu-primary {
+  margin-bottom: 0;
+
+  > .menu-item {
+    position: relative;
+
+    @include media(lg) {
+      display: inline-block;
+      margin-right: 40px;
+
+      &:hover {
+        .sub-menu {
+          display: block;
+          border-top: 2px solid $brand-primary;
+        }
+      }
+    }
 
     > a {
       display: block;
       color: $gray;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
       font-size: 14px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      @extend %spacecase;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      @include media(lg) {
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        &:hover {
+          border-bottom-color: $brand-primary;
+          background-color: transparent;
+        }
+      }
     }
   }
 
-  .sub-menu {
-    margin-top: 10px;
-
-    .menu-item {
-      padding-left: 10px;
-      border-top: 1px solid $brand-primary;
-
-      &:last-child {
-        border-bottom: 1px solid $brand-primary;
+  .current-menu-item {
+    @include media(lg) {
+      > a {
+        font-weight: 600;
+        color: $brand-primary;
+        border-top-color: $brand-primary;
       }
     }
   }
 }
 
-// handle responsive menu toggling
-.nav-primary {
-  display: none;
+.sub-menu {
+  background-color: $brand-secondary;
+  margin-bottom: 20px;
 
   @include media(lg) {
-    display: block;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
   }
 
-  .is-open & {
+  .menu-item {
+    border-top: 1px solid $brand-primary;
+
+    &:last-child {
+      border-bottom: 1px solid $brand-primary;
+    }
+  }
+
+  a {
     display: block;
+    border-bottom: 0;
+    border-top: 0;
+    padding: 10px;
+    font-size: 13px;
+    @extend %spacecase;
+
+    &:hover {
+      background-color: transparent;
+      border-color: transparent !important;
+    }
+
+    @include media(lg) {
+      &:hover {
+        background-color: $brand-secondary-dark;
+      }
+    }
   }
 }
