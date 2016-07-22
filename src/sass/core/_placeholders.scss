@@ -5,6 +5,16 @@
     clear: both;
   }
 }
+
+%bordered-link {
+  // TODO: need to use $gray here but globbing prevents variables from being loaded first
+  border-bottom: 1px dotted #666;
+
+  &:hover {
+    border-bottom: 0;
+  }
+}
+
 %spacecase {
   letter-spacing: .2em;
   text-transform: uppercase;
