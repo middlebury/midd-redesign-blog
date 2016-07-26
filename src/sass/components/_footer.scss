@@ -4,7 +4,17 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
-  a {
+  a,
+  p {
     color: $white;
+    font-size: 14px;
+  }
+
+  .widget {
+    margin-bottom: 0;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 }

@@ -111,3 +111,23 @@ add_filter( 'genesis_site_title_wrap', 'rdsn_h1_for_site_title' );
 function rdsn_h1_for_site_title( $wrap ) {
   return 'h1';
 }
+
+add_action( 'widgets_init', 'rdsn_footer_widgets_init' );
+function rdsn_footer_widgets_init() {
+  genesis_register_sidebar( array(
+    'id' => 'rdsn-footer',
+    'name' => __( 'Footer', 'rdsn' ),
+    'description' => __( 'Widgets in this area will be shown in the site footer.', 'rdsn' ),
+  ) );
+}
+
+//* Hook after post widget area after post content
+add_action( 'genesis_footer', 'rdsn_footer_widget' );
+function rdsn_footer_widget() {
+	genesis_widget_area( 'rdsn-footer', array(
+		'before' => '<div class="footer-widgets widget-area">',
+		'after' => '</div>',
+  ) );
+}
+
+remove_action( 'genesis_footer', 'genesis_do_footer' );
