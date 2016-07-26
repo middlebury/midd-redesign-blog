@@ -66,16 +66,16 @@ remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 add_action( 'genesis_entry_header', 'genesis_post_info', 5 );
 
 //* Customize the post meta function
-add_filter( 'genesis_post_meta', 'sp_post_meta_filter' );
-function sp_post_meta_filter( $post_meta ) {
+add_filter( 'genesis_post_meta', 'rdsn_post_meta_filter' );
+function rdsn_post_meta_filter( $post_meta ) {
   if ( !is_page() ) {
   	$post_meta = '[post_tags before="<strong>Tags:</strong> "]';
   	return $post_meta;
   }
 }
 
-add_filter( 'genesis_post_info', 'sp_post_info_filter' );
-function sp_post_info_filter( $post_info ) {
+add_filter( 'genesis_post_info', 'rdsn_post_info_filter' );
+function rdsn_post_info_filter( $post_info ) {
   if ( !is_page() ) {
   	$post_info = '[post_date]<br>[post_categories before="<strong>Categories:</strong> "]';
   	return $post_info;
