@@ -23,6 +23,11 @@
 
 .entry-time {
   @extend %meta-spacecase;
+
+  .single & {
+    margin-top: 80px;
+    display: block;
+  }
 }
 
 .entry-categories,
@@ -48,11 +53,11 @@
       color: $brand-primary;
     }
   }
+}
 
-  .page & {
-    font-weight: 600;
-    color: $brand-primary;
-  }
+h1.entry-title {
+  font-weight: 600;
+  color: $brand-primary;
 }
 
 .entry-author-by {
