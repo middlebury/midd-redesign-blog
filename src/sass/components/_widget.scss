@@ -11,23 +11,44 @@
   margin-top: 0;
 }
 
+%widget-link {
+  display: block;
+  background-color: $brand-secondary;
+  font-size: 13px !important;
+  color: $gray;
+  padding: 10px;
+  @extend %spacecase;
+
+  &:hover {
+    color: $brand-primary;
+    background-color: $brand-secondary-dark;
+  }
+}
+
 .tagcloud {
   > a {
-    display: block;
-    background-color: $brand-secondary;
-    font-size: 13px !important;
-    color: $gray;
-    padding: 10px;
-    border-bottom: 1px solid $brand-primary;
-    @extend %spacecase;
+    @extend %widget-link;
+    border-top: 1px solid $brand-primary;
 
-    &:hover {
-      color: $brand-primary;
-      background-color: $brand-secondary-dark;
+    &:last-child {
+      border-bottom: 1px solid $brand-primary;
     }
+  }
+}
 
-    &:first-child {
+.sidebar {
+
+  .menu {
+    li {
       border-top: 1px solid $brand-primary;
+
+      &:last-child {
+        border-bottom: 1px solid $brand-primary;
+      }
+
+      a {
+        @extend %widget-link;
+      }
     }
   }
 }
