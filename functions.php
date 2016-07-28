@@ -27,6 +27,7 @@ add_theme_support( 'genesis-structural-wraps', array(
     'footer'
 ) );
 
+//* Enqueue scripts and styles
 add_action('wp_enqueue_scripts', 'rdsn_enqueue_scripts_styles');
 function rdsn_enqueue_scripts_styles() {
   wp_enqueue_style( 'rdsn-fonts', 'https://cloud.typography.com/83898/706148/css/fonts.css', array(), CHILD_THEME_VERSION );
@@ -84,6 +85,7 @@ function rdsn_post_meta_filter( $post_meta ) {
 
 }
 
+//* Combine post date with post categories
 add_filter( 'genesis_post_info', 'rdsn_post_info_filter' );
 function rdsn_post_info_filter( $post_info ) {
   if ( !is_page() && !is_single() ) {
@@ -92,6 +94,7 @@ function rdsn_post_info_filter( $post_info ) {
   }
 }
 
+//* On single posts, show byline and date together. On lists of posts, show date and categories before title
 add_filter( 'genesis_post_title_output', 'rdsn_post_title_output', 15 );
 function rdsn_post_title_output( $title ) {
 
@@ -124,11 +127,13 @@ function cci_next_link_text() {
   return $nextlink;
 }
 
+//* Force h1 site title element on all pages
 add_filter( 'genesis_site_title_wrap', 'rdsn_h1_for_site_title' );
 function rdsn_h1_for_site_title( $wrap ) {
   return 'h1';
 }
 
+//* Insert rdsn-footer widget area into site-footer
 add_action( 'widgets_init', 'rdsn_footer_widgets_init' );
 function rdsn_footer_widgets_init() {
   genesis_register_sidebar( array(
@@ -147,4 +152,5 @@ function rdsn_footer_widget() {
   ) );
 }
 
+//* Remove footer copyright line
 remove_action( 'genesis_footer', 'genesis_do_footer' );
