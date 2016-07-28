@@ -57,11 +57,13 @@
       color: $brand-primary;
     }
   }
-}
 
-h1.entry-title {
-  font-weight: 600;
-  color: $brand-primary;
+  .single &,
+  .page & {
+    font-weight: 600;
+    color: $brand-primary;
+    font-size: 24px;
+  }
 }
 
 .entry-author-by {
