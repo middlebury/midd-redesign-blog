@@ -112,7 +112,6 @@ function rdsn_post_title_output( $title ) {
   return $title;
 }
 
-
 //* Customize previous link in pagination
 add_filter( 'genesis_prev_link_text', 'rdsn_prev_link_text' );
 function rdsn_prev_link_text( $text ) {
