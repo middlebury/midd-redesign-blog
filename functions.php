@@ -154,3 +154,14 @@ function rdsn_footer_widget() {
 
 //* Remove footer copyright line
 remove_action( 'genesis_footer', 'genesis_do_footer' );
+
+//* Customize next/previous links for pages
+add_action( 'genesis_before_comments', 'rdsn_prev_next_post_nav' );
+function rdsn_prev_next_post_nav() {
+	if ( is_singular( 'post' ) ) {
+		echo '<div class="archive-pagination pagination">';
+		previous_post_link( '<div class="pagination-previous">%link</div>', 'Previous' );
+		next_post_link( '<div class="pagination-next">%link</div>', 'Next' );
+		echo '</div>';
+	}
+}
