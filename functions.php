@@ -114,17 +114,17 @@ function rdsn_post_title_output( $title ) {
 
 
 //* Customize previous link in pagination
-  $prevlink = 'Previous';
-  return $prevlink;
 add_filter( 'genesis_prev_link_text', 'rdsn_prev_link_text' );
 function rdsn_prev_link_text( $text ) {
+  $text = 'Previous';
+  return $text;
 }
 
 //* Customize next link in pagination
-  $nextlink = 'Next';
-  return $nextlink;
 add_filter( 'genesis_next_link_text', 'rdsn_next_link_text' );
 function rdsn_next_link_text( $text ) {
+  $text = 'Next';
+  return $text;
 }
 
 //* Force h1 site title element on all pages
