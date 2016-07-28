@@ -165,3 +165,24 @@ function rdsn_prev_next_post_nav() {
 		echo '</div>';
 	}
 }
+
+// add tag title to tags page
+add_action('genesis_before_loop', 'rdsn_tags_title');
+function rdsn_tags_title() {
+
+  $title = '';
+
+  if( is_tag() ) {
+    $title = 'Tags';
+  }
+
+  if( is_category() ) {
+    $title = 'Categories';
+  }
+
+  if( !empty( $title ) ) {
+    echo '<header class="entry-header">';
+    echo sprintf('<h1 class="entry-title">%s: %s</h1>', $title, single_tag_title('', FALSE) );
+    echo '</header>';
+  }
+}
