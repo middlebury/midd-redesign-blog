@@ -114,17 +114,17 @@ function rdsn_post_title_output( $title ) {
 
 
 //* Customize previous link in pagination
-add_filter( 'genesis_prev_link_text', 'cci_prev_link_text' );
-function cci_prev_link_text() {
   $prevlink = 'Previous';
   return $prevlink;
+add_filter( 'genesis_prev_link_text', 'rdsn_prev_link_text' );
+function rdsn_prev_link_text( $text ) {
 }
 
 //* Customize next link in pagination
-add_filter( 'genesis_next_link_text', 'cci_next_link_text' );
-function cci_next_link_text() {
   $nextlink = 'Next';
   return $nextlink;
+add_filter( 'genesis_next_link_text', 'rdsn_next_link_text' );
+function rdsn_next_link_text( $text ) {
 }
 
 //* Force h1 site title element on all pages
