@@ -9,9 +9,7 @@
 
   a {
     color: $gray;
-    font-size: 12px;
-    @extend %bordered-link;
-    @extend %spacecase;
+    font-size: 13px;
   }
 }
 

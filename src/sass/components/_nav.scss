@@ -119,6 +119,8 @@
     }
 
     @include media(lg) {
+      font-size: 12px;
+      
       &:hover {
         background-color: $brand-secondary-dark;
       }
