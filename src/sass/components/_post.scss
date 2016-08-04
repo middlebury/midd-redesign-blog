@@ -20,6 +20,8 @@
 .entry-header {
   margin-bottom: 40px;
 
+  .archive &,
+  .single,
   .page & {
     margin-bottom: 80px;
   }
@@ -57,10 +59,9 @@
     }
   }
 
-  .archive &,
+  .content > .entry-header &,
   .single &,
   .page & {
-    font-weight: 400;
     color: $brand-primary;
     font-size: 32px;
   }
